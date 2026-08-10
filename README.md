@@ -1,4 +1,4 @@
-# 🚀 ACIS Flow
+# 🚀 OrderFlow
 
 > **Smart F&B Operations Platform for Small & Medium Businesses**
 
@@ -24,6 +24,22 @@ ACIS Flow là nền tảng quản lý vận hành dành cho quán cà phê, trà
 - 🔔 Notification
 
 - 📈 Revenue Analytics
+
+
+## 🏗 System Architecture
+
+```
+graph LR  
+A\[Service Staff\] --\> B\[Telegram Bot\]  
+C\[Barista\] --\> B  
+D\[Manager\] --\> E\[Admin Web\]  
+  
+B --\> F\[Express.js API\]  
+E --\> F  
+  
+F --\> G\[(PostgreSQL)\]  
+I\[SePay\] --\>|Webhook| F
+```
 
 
 ## 🔄 Business Workflow
@@ -62,9 +78,6 @@ READY --\> DELIVERED
 
 
 # ⚙️ Tech Stack
-
-Layer           Technology
-
 
 Backend         Node.js + Express.js + TypeScript ORM             Prisma Database        PostgreSQL Bot             Telegraf.js Frontend        Next.js Auth            JWT Validation      Zod Logging         Pino API Docs        Swagger Testing         Jest + Supertest Deploy          Docker
 
